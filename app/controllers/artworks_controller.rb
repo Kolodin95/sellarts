@@ -6,18 +6,18 @@ class ArtworksController < ApplicationController
   end
 
   def show
-    @artworks = Artwork.find(params[:id])
+    @artwork = Artwork.find(params[:id])
   end
 
   def new
-    @artworks = Artwork.new
+    @artwork = Artwork.new
   end
 
   def create
-    @artworks = Artwork.new(params_artworks)
-    @artworks.save
-    if @artworks.save
-      redirect_to artwork_path(@artworks)
+    @artwork = Artwork.new(params_artworks)
+    @artwork.save
+    if @artwork.save
+      redirect_to artwork_path(@artwork)
     else
       render :new
     end
@@ -26,6 +26,6 @@ class ArtworksController < ApplicationController
   private
 
   def params_artworks
-    params.require(:artworks).permit(:title, :author, :creation_date, :denomination, :price)
+    params.require(:artwork).permit(:title, :author, :creation_date, :denomination, :price)
   end
 end
