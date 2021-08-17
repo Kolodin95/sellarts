@@ -3,16 +3,24 @@
     <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
     <p>Change your life and learn to code at one of our campuses around the world.</p>
     <% if current_user %>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <a class="btn btn-ghost" href="#">Add your art !</a>
     <% end %>
   </div>
 </div>
 
-<%= current_user.name %>
+<%# <%= current_user.name %>
 
-
-
-  <% @artworks.each do |artwork| %>
-  <%= artwork.name %>
-  <%# <%= link_to artwork.author, user_id_path %>
-  <% end %>
+<div class="container">
+      <div class="card">
+        <% @artworks.each do |artwork| %>
+          <div class="card-img">
+            <%= cl_image_tag artwork.photo.key %>
+              <div class="card-infos">
+                <h2><%= artwork.title %></h2>
+                <h2><%= artwork.author %></h2>
+                <%# <%= link_to artwork.author, user_id_path a finir day 4%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+</div>
