@@ -4,3 +4,4 @@ class ChangeColumnsToTables < ActiveRecord::Migration[6.0]
     add_column :artworks, :address, :string
   end
 end
+
