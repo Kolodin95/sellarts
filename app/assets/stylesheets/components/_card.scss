@@ -5,6 +5,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin-top: 20px;
+  padding: 15px
 }
 
 .card-img img {
@@ -25,11 +27,11 @@
   margin: 0;
 }
 
-
 .card .card-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  border-radius: 4%;
 }
