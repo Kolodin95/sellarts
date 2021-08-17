@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Creer une seed pour remplir depuis le CSV les informations de artworks
+# "title" "author" "creation_date" "denomination" "price"
+#
