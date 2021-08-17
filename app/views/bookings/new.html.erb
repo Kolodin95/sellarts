@@ -1,33 +1,26 @@
-<div class="container">
-<%# navbar %>
+<div class="container d-flex flex-column align-items-center ">
 
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2><%=@artwork.title %></h2>
-      <p><%=@artwork.author %> <%=@artwork.creation_date %> <%=@artwork.denomination %></p>
+<%# element.style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} %>
 
+  <div class="card-booking">
+    <%= cl_image_tag @artwork.photo.key %>
+    <div class="card-infos-booking">
+      <div>
+        <h2><%=@artwork.title %></h2>
+        <h2><%=@artwork.author %> <%=@artwork.creation_date %> <%=@artwork.denomination %></h2>
+        <h2><%=@artwork.price %> balles</h2>
+      </div>
+      
     </div>
-    <h2 class="card-trip-pricing"><%=@artwork.price %></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
-</div>
 
-<%# <%=@artwork.title %>
-<%# <%=@artwork.author %> 
-<%# <%=@artwork.creation_date %>
-<%# <%=@artwork.denomination %> 
-<%# <%=@artwork.price %> 
-<%# <%=@artwork.user_id %> 
-
-<%= simple_form_for [ @artwork, @booking ] do |f| %>
-  <%# <%= f.input :title %> 
-  <%# <%= f.input :user_id %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%# <% <%= f.input :price  %>
-  <%= f.submit "Proceed to payment", class: "btn btn-success" %>
-<% end %>
- 
+  <%= simple_form_for [ @artwork, @booking ] do |f| %>
+    <%= f.input :start_date, html5: true %>
+    <%= f.input :end_date, html5: true %>
+    <%= f.submit "Proceed to payment", class: "btn btn-success" %>
+  <% end %>
 </div>
