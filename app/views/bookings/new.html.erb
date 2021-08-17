@@ -1,14 +1,27 @@
 <div class="container">
 <%# navbar %>
 
-<%=@artworks.title %>
-<%=@artworks.author %>
-<%=@artworks.creation_date %>
-<%=@artworks.type %>
-<%=@artworks.price %>
-<%=@artworks.user_id %>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%=@artwork.title %></h2>
+      <p><%=@artwork.author %> <%=@artwork.creation_date %> <%=@artwork.denomination %></p>
 
-<%= simple_form_for(@booking) do |f| %>
+    </div>
+    <h2 class="card-trip-pricing"><%=@artwork.price %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+<%# <%=@artwork.title %>
+<%# <%=@artwork.author %> 
+<%# <%=@artwork.creation_date %>
+<%# <%=@artwork.denomination %> 
+<%# <%=@artwork.price %> 
+<%# <%=@artwork.user_id %> 
+
+<%= simple_form_for [ @artwork, @booking ] do |f| %>
   <%# <%= f.input :title %> 
   <%# <%= f.input :user_id %>
   <%= f.input :start_date %>
