@@ -1,10 +1,13 @@
-<div class="card">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
+<% @artworks.photo.each do |artwork| %>
+      <%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill  %>
+    <% end %>
+    <div class="card-infos">
+      <div>
+        <% @artworks.each do |artwork| %>
+          <h2><%= artwork.title %></h2>
+          <h2><%= artwork.author %></h2>
+          <%# <%= link_to artwork.author, user_id_path a finir day 4%>
+          <p>Short description here!</p>
+        <% end %>
+      </div>
     </div>
-    <h2 class="card-pricing">£99.99</h2>
-  </div>
-</div>
