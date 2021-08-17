@@ -10,11 +10,14 @@
 
 <%# <%= current_user.name %>
 
+
 <div class="container">
       <div class="card">
         <% @artworks.each do |artwork| %>
           <div class="card-img">
+          <%= link_to artwork_path(artwork) do %>
             <%= cl_image_tag artwork.photo.key %>
+            <% end %>
               <div class="card-infos">
                 <h2><%= artwork.title %></h2>
                 <h2><%= artwork.author %></h2>
