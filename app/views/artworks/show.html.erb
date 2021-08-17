@@ -1,13 +1,36 @@
-<% @artworks.photo.each do |artwork| %>
-      <%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill  %>
-    <% end %>
-    <div class="card-infos">
-      <div>
-        <% @artworks.each do |artwork| %>
-          <h2><%= artwork.title %></h2>
-          <h2><%= artwork.author %></h2>
-          <%# <%= link_to artwork.author, user_id_path a finir day 4%>
-          <p>Short description here!</p>
-        <% end %>
+
+<h1> Rent <%= @artwork.title %> by <%= @artwork.author %></h1>
+
+<div class="container d-flex justify-content-center">
+  <div class="card-trip">
+    <%= cl_image_tag @artwork.photo.key, height: 400, width: 400, crop: :fill  %>
+    <div class="card-trip-infos">
+      <div class ="show-artwork-details">
+        <table width="100%" cellspacing="1" cellpadding="5">
+          <tr>
+            <td class = "card-desc-placeholder">Artist : </td>
+            <td class = "card-desc-real-data"><%= @artwork.author %></td>
+          </tr>
+          <tr>
+            <td class = "card-desc-placeholder">Artwork title : </td>
+            <td class = "card-desc-real-data"><%= @artwork.title %></td>
+          </tr>
+          <tr>
+            <td class = "card-desc-placeholder">Type : </td>
+            <td class = "card-desc-real-data"><%= @artwork.denomination %></td>
+          </tr>
+          <tr>
+            <td class = "card-desc-placeholder">Creation Date : </td>
+            <td class = "card-desc-real-data"><%= @artwork.creation_date %></td>
+          </tr>
+          <tr>
+            <td class = "card-desc-placeholder">Available in : </td>
+            <td class = "card-desc-real-data"><%= @artwork.address %></td>
+          </tr>
+        </table>
       </div>
+      <h2 class="card-trip-pricing">From : <%= @artwork.price %>€ /jour</h2>
+      <a href="#" class = "btn btn-primary btn-show"> Book now</a>
     </div>
+  </div>
+</div>
