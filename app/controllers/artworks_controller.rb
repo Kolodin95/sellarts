@@ -19,9 +19,10 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new(params_artworks)
+    @artwork.user = current_user
     authorize @artwork
     if @artwork.save
-      redirect_to artwork_path(@artwork)
+      redirect_to dashboard_path
     else
       render :new
     end
