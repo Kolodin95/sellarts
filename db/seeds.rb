@@ -58,7 +58,7 @@ artwork.save!
 puts ("Associating 3 artworks to the user 3")
 # 1 artwork
 file = URI.open('https://api.art.rmngp.fr/v1/images/17/205969?t=hBOpLkUJEBNyiPX3tdSL5Q')
-artwork = Artwork.create(title: 'Fritillaires couronne impériale dans un vase de cuivre', author: "Vincent Van Gogh", creation_date: "1886",
+artwork = Artwork.create(title: 'Fritillaires couronne impériale', author: "Vincent Van Gogh", creation_date: "1886",
                          price: rand(100..10_000), user_id: user3.id, denomination: "Tableau")
 artwork.photo.attach(io: file, filename: 'van-gogh-cuivre.png', content_type: 'image/png')
 artwork.save!
