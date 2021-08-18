@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :artworks, only: %i[index show new create] do
       resources :bookings, only: %i[new create]
     end
-    
     # resources :pages, only: %i[dashboard]
      get 'dashboard', to: 'pages#dashboard'
    end

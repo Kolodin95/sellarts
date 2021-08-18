@@ -12,10 +12,20 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      # redirect_to pages_dashboard_path() voir avec le pro des dashboard
+     redirect_to dashboard_path
     else
       render :new
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to dashboard_path
   end
 
   private
