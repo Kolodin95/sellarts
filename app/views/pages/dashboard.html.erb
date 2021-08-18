@@ -1,6 +1,7 @@
   <div class="container">
+        <h1>My bookings</h1>
         <div class="card">
-          <% current_user.bookings.each do |booking| %>
+          <% @bookings.each do |booking| %>
             <div class="card-img">
             <%= link_to artwork_path(booking.artwork) do %>
               <%= cl_image_tag booking.artwork.photo.key %>
@@ -12,6 +13,23 @@
                   <h2><%= booking.end_date %></h2>
                   <%# <h2><%= booking.price %></h2>
                   <%# <h2><%= booking.status %></h2> %> %>
+                </div>
+            </div>
+          <% end %>
+        </div>
+  </div>
+
+  <div class="container">
+        <h1>My arts</h1>
+        <div class="card">
+          <% @artworks.each do |artwork| %>
+            <div class="card-img">
+            <%= link_to artwork_path(artwork) do %>
+              <%= cl_image_tag artwork.photo.key %>
+              <% end %>
+                <div class="card-infos">
+                  <h2><%= artwork.title %></h2>
+                  <h2><%= artwork.author %></h2>
                 </div>
             </div>
           <% end %>
