@@ -1,0 +1,13 @@
+
+<div class="container">
+  <%= simple_form_for(artwork) do |t| %>
+    <%= t.input :title %>
+    <%= t.input :author %>
+    <%= t.input :denomination %>
+    <%= t.input :creation_date %>
+    <%= t.input :price %>
+    <%= t.input :address %>
+    <%= t.input :photo, as: :file %>
+    <%= t.submit %>
+  <% end %>
+</div>
