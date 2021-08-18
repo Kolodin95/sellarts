@@ -4,11 +4,11 @@ class ArtworksController < ApplicationController
 
   def index
     @artworks = policy_scope(Artwork)
-
   end
 
   def show
     @artwork = Artwork.find(params[:id])
+    @booking = Booking.new
     authorize @artwork
   end
 

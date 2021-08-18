@@ -3,21 +3,21 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @artwork = Artwork.find(params[:artwork_id])
     authorize @booking
-   end
+  end
 
   def create
     @booking = Booking.new(params_bookings)
-    @artwork = Artwork.find(params[:artwork_id]) 
+    @artwork = Artwork.find(params[:artwork_id])
     @booking.artwork = @artwork
     @booking.user = current_user
     authorize @booking
-    if @booking.save 
+    if @booking.save
       # redirect_to pages_dashboard_path() voir avec le pro des dashboard
-    else  
+    else
       render :new
-    end  
-  end  
-  
+    end
+  end
+
   private
 
   def params_bookings
