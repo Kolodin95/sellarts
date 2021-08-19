@@ -34,11 +34,57 @@
         <%= simple_form_for [ @artwork, @booking ] do |f| %>
           <%= f.input :start_date, html5: true, input_html: {data: {price_update_show_target: "start"}, value: Date.today()} %>
           <%= f.input :end_date, html5: true, input_html: {data: {price_update_show_target: "end"}, value: Date.today() + 1}  %>
-          <%= f.submit "Book now", class: "btn btn-success" %>
+          <%= f.submit "Book now", class: "btn-book" %>
         <% end %>
         <h2 class="card-trip-pricing" >Total : <span data-price-update-show-target="total"><%= @artwork.price %></span>€ for
                                                <span data-price-update-show-target="days">1</span> day(s)</h2>
       </div>
     </div>
   </div>
+</div>
+
+<div class="container-show">
+<div class="card-artwork">
+  <%= cl_image_tag @artwork.photo.key, height: 400, width: 400, crop: :fill  %>
+  <div class="card-artwork-infos">
+    <div>
+       <table width="100%" cellspacing="1" cellpadding="5">
+          <tr>
+            <td class = "card-desc-placeholder">Artist : </td>
+            <td class = "card-desc-real-data"><%= @artwork.author %></td>
+          </tr>
+          <tr>
+            <td class = "card-desc-placeholder">Artwork title : </td>
+            <td class = "card-desc-real-data"><%= @artwork.title %></td>
+          </tr>
+          <tr>
+            <td class = "card-desc-placeholder">Type : </td>
+            <td class = "card-desc-real-data"><%= @artwork.denomination %></td>
+          </tr>
+          <tr>
+            <td class = "card-desc-placeholder">Creation Date : </td>
+            <td class = "card-desc-real-data"><%= @artwork.creation_date %></td>
+          </tr>
+          <tr>
+            <td class = "card-desc-placeholder">Available in : </td>
+            <td class = "card-desc-real-data"><%= @artwork.address %></td>
+          </tr>
+        </table>
+    </div>
+  </div>
+</div>
+
+<div class="card-form">
+  <div data-controller="price-update-show">
+        <h2 class="card-trip-pricing" >From : <span data-price-update-show-target="price"><%= @artwork.price %></span>€ /day</h2>
+        <%= simple_form_for [ @artwork, @booking ] do |f| %>
+          <%= f.input :start_date, html5: true, input_html: {data: {price_update_show_target: "start"}, value: Date.today()} %>
+          <%= f.input :end_date, html5: true, input_html: {data: {price_update_show_target: "end"}, value: Date.today() + 1}  %>
+          <%= f.submit "Book now", class: "btn-book" %>
+        <% end %>
+        <h2 class="card-trip-pricing" > <span data-price-update-show-target="total"><%= @artwork.price %></span>€ for
+                                               <span data-price-update-show-target="days">1</span> day(s)</h2>
+      </div>
+</div>
+
 </div>
