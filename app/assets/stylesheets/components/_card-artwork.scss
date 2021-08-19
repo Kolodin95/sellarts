@@ -1,0 +1,59 @@
+.card-artwork{
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background: white;
+  width: 40%;
+  }
+  
+  .card-artwork-infos {
+    padding: 10px;
+  
+  }
+  
+  
+  .card-artwork > img {
+    object-fit: cover;
+    height: 350px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+  }
+  
+  .card-artwork h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-artwork p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+  
+  .container-show {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-top: 70px;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-gap: 16px;
+  }
+  
+  .card-form {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 20px;
+  background: white;
+  width: 40%;
+   }
+  
+   .new_booking {
+     padding: 60px 0;
+   }
+   
+   .card-form h2 {
+     font-weight: bold;
+   }

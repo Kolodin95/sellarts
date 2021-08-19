@@ -27,6 +27,10 @@
             <td class = "card-desc-placeholder">Available in : </td>
             <td class = "card-desc-real-data"><%= @artwork.address %></td>
           </tr>
+           <tr>
+            <td class = "card-desc-placeholder">Price per day </td>
+            <td class = "card-desc-real-data"><%= @artwork.price %>€</td>
+          </tr>
         </table>
     </div>
   </div>
@@ -34,7 +38,7 @@
 
 <div class="card-form">
   <div data-controller="price-update-show">
-        <h2 class="card-trip-pricing" >From : <span data-price-update-show-target="price"><%= @artwork.price %></span>€ /day</h2>
+        <h2 class="card-trip-pricing" >Your Booking</h2>
         <%= simple_form_for [ @artwork, @booking ] do |f| %>
           <%= f.input :start_date, html5: true, input_html: {data: {price_update_show_target: "start"}, value: Date.today()} %>
           <%= f.input :end_date, html5: true, input_html: {data: {price_update_show_target: "end"}, value: Date.today() + 1}  %>
