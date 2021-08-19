@@ -4,7 +4,6 @@ class Booking < ApplicationRecord
 
   def total_price
     diff_date = end_date - start_date
-    calculated_price = (artwork.price * diff_date).to_i
-    return "#{calculated_price}"
+    return (artwork.price * diff_date).to_i
   end
 end

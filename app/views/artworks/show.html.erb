@@ -32,10 +32,12 @@
       <div data-controller="price-update-show">
         <h2 class="card-trip-pricing" >From : <span data-price-update-show-target="price"><%= @artwork.price %></span>€ /jour</h2>
         <%= simple_form_for [ @artwork, @booking ] do |f| %>
-          <%= f.input :start_date, html5: true, input_html: {data: {price_update_show_target: "start"}, value: Date.today()} %>
+          <%= f.input :start_date, html5: true, input_html: {data: {price_update_show_target: "start"}, value: Date.today()}, input_html: {class: "datepicker"} %>
           <%= f.input :end_date, html5: true, input_html: {data: {price_update_show_target: "end"}, value: Date.today() + 1}  %>
+          <%= f.input :status, :as => :hidden, :input_html => { :value => "pending" } %>
           <%= f.submit "Book now", class: "btn btn-success" %>
         <% end %>
+
         <h2 class="card-trip-pricing" >Total : <span data-price-update-show-target="total"><%= @artwork.price %></span>€ for
                                                <span data-price-update-show-target="days">1</span> day(s)</h2>
       </div>
