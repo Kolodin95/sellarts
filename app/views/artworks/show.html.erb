@@ -1,12 +1,12 @@
 
 <h1> Rent <%= @artwork.title %> by <%= @artwork.author %></h1>
 
-<div class="container d-flex justify-content-center">
-  <div class="card-trip">
-    <%= cl_image_tag @artwork.photo.key, height: 400, width: 400, crop: :fill  %>
-    <div class="card-trip-infos">
-      <div class ="show-artwork-details">
-        <table width="100%" cellspacing="1" cellpadding="5">
+<div class="container-show">
+<div class="card-artwork">
+  <%= cl_image_tag @artwork.photo.key, height: 400, width: 400, crop: :fill  %>
+  <div class="card-artwork-infos">
+    <div>
+       <table width="100%" cellspacing="1" cellpadding="5">
           <tr>
             <td class = "card-desc-placeholder">Artist : </td>
             <td class = "card-desc-real-data"><%= @artwork.author %></td>
@@ -28,17 +28,21 @@
             <td class = "card-desc-real-data"><%= @artwork.address %></td>
           </tr>
         </table>
-      </div>
-      <div data-controller="price-update-show">
-        <h2 class="card-trip-pricing" >From : <span data-price-update-show-target="price"><%= @artwork.price %></span>€ /jour</h2>
+    </div>
+  </div>
+</div>
+
+<div class="card-form">
+  <div data-controller="price-update-show">
+        <h2 class="card-trip-pricing" >From : <span data-price-update-show-target="price"><%= @artwork.price %></span>€ /day</h2>
         <%= simple_form_for [ @artwork, @booking ] do |f| %>
           <%= f.input :start_date, html5: true, input_html: {data: {price_update_show_target: "start"}, value: Date.today()} %>
           <%= f.input :end_date, html5: true, input_html: {data: {price_update_show_target: "end"}, value: Date.today() + 1}  %>
-          <%= f.submit "Book now", class: "btn btn-success" %>
+          <%= f.submit "Book now", class: "btn-book" %>
         <% end %>
-        <h2 class="card-trip-pricing" >Total : <span data-price-update-show-target="total"><%= @artwork.price %></span>€ for
+        <h2 class="card-trip-pricing" > <span data-price-update-show-target="total"><%= @artwork.price %></span>€ for
                                                <span data-price-update-show-target="days">1</span> day(s)</h2>
       </div>
-    </div>
-  </div>
+</div>
+
 </div>
