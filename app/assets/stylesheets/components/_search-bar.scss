@@ -8,13 +8,17 @@
   top: 8px;
   bottom: 8px;
   right: 8px;
+  background-color: white;
+  color: grey;
+  border-color: lightgray;
+  opacity: 0.8;
 }
 
 .search-form-control .form-control {
-  height: 3.5rem;
+  height: 3.3rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
-  width: 750px;
+  width: 500px;
 }
 
 .search-form-control .form-control:focus {
