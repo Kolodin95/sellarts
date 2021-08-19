@@ -1,0 +1,16 @@
+  <div class="container">
+        <h1>My arts</h1>
+        <div class="card">
+          <% @artworks.each do |artwork| %>
+            <div class="card-img">
+            <%= link_to artwork_path(artwork) do %>
+              <%= cl_image_tag artwork.photo.key %>
+              <% end %>
+                <div class="card-infos">
+                  <h2><%= artwork.title %></h2>
+                  <h2><%= artwork.author %></h2>
+                </div>
+            </div>
+          <% end %>
+        </div>
+  </div>
