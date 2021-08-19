@@ -3,7 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 16px;
   margin-top: 20px;
   padding: 15px;
@@ -18,10 +18,10 @@
 }
 
 .card-img:hover {
-  transform: scale(1.15);
+  transform: scale(1.05);
   background-color: white;
   z-index: 1;
-  transition: 1s;
+  transition: 0.7s;
   box-shadow: 0 0 25px rgba(0,0,0,0.2);
 }
 
