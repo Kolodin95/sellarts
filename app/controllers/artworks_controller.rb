@@ -3,12 +3,16 @@ class ArtworksController < ApplicationController
 
 
   def index
-    @artworks = policy_scope(Artwork)
-
+    if params[:query].present?
+      @artworks = policy_scope(Artwork).search_by_title_and_author_and_denomination(params[:query])
+    else
+      @artworks = policy_scope(Artwork)
+    end
   end
 
   def show
     @artwork = Artwork.find(params[:id])
+    @booking = Booking.new
     authorize @artwork
   end
 

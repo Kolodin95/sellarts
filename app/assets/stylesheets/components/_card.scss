@@ -3,13 +3,13 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 16px;
   margin-top: 20px;
   padding: 15px;
   overflow:visible;
+  border-radius: 10px;
 }
-
 
 .card-img img {
   height: 300px;
@@ -18,15 +18,15 @@
 }
 
 .card-img:hover {
-  transform: scale(1.3);
+  transform: scale(1.05);
   background-color: white;
   z-index: 1;
-  transition: 1s;
+  transition: 0.7s;
   box-shadow: 0 0 25px rgba(0,0,0,0.2);
 }
 
 .card h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
@@ -41,9 +41,71 @@
 
 .card .card-infos {
   padding: 16px;
-  display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
   border-radius: 4%;
 }
+
+.card .author_name {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+
+.dashboard-desc {
+  text-align: right;
+}
+
+.card-artwork{
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+background: white;
+}
+
+.card-artwork-infos {
+  padding: 10px;
+}
+
+.card-artwork > img {
+  object-fit: cover;
+  height: 350px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card-artwork h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-artwork p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.container-show {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  height: 100%;
+  margin-top: 70px;
+}
+
+.card-form {
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+padding: 20px;
+background: white;
+ }
+
+ .new_booking {
+   padding: 60px 0;
+ }
+ 
+ .card-form h2 {
+   font-weight: bold;
+ }
+
