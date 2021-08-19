@@ -8,8 +8,8 @@
   margin-top: 20px;
   padding: 15px;
   overflow:visible;
+  border-radius: 10px;
 }
-
 
 .card-img img {
   height: 300px;
@@ -26,7 +26,7 @@
 }
 
 .card h2 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
@@ -52,6 +52,11 @@
   font-size: 16px;
 }
 
+
+.dashboard-desc {
+  text-align: right;
+}
+
 .card-artwork{
 box-shadow: 0 0 15px rgba(0,0,0,0.2);
 border-radius: 5px;
@@ -60,9 +65,7 @@ background: white;
 
 .card-artwork-infos {
   padding: 10px;
-
 }
-
 
 .card-artwork > img {
   object-fit: cover;
@@ -89,7 +92,6 @@ background: white;
   justify-content: space-evenly;
   height: 100%;
   margin-top: 70px;
-
 }
 
 .card-form {
@@ -106,3 +108,4 @@ background: white;
  .card-form h2 {
    font-weight: bold;
  }
+
