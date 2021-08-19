@@ -1,20 +1,19 @@
-  <div class="container">
-        <h1>My bookings</h1>
-        <div class="card">
-          <% @bookings.each do |booking| %>
-            <div class="card-img">
-            <%= link_to artwork_path(booking.artwork) do %>
-              <%= cl_image_tag booking.artwork.photo.key %>
-              <% end %>
-                <div class="card-infos">
-                  <h2><%= booking.artwork.title %></h2>
-                  <h2><%= booking.artwork.author %></h2>
-                  <h2><%= booking.start_date %></h2>
-                  <h2><%= booking.end_date %></h2>
-                  <%# <h2><%= booking.price %></h2>
-                  <%# <h2><%= booking.status %></h2>
-                </div>
-            </div>
-          <% end %>
-        </div>
+<div class="container">
+  <h1>My bookings</h1>
+  <div class="card">
+    <% @bookings.each do |booking| %>
+      <div class="card-img">
+      <%= link_to artwork_path(booking.artwork) do %>
+        <%= cl_image_tag booking.artwork.photo.key %>
+        <% end %>
+          <div class="card-infos">
+            <h2><i class="fas fa-heading icon-dash"></i><%= booking.artwork.title %></h2>
+            <h2><i class="fas fa-palette icon-dash"></i><%= booking.artwork.author %></h2>
+            <h2><i class="far fa-calendar-check icon-dash"></i><%= (booking.start_date).strftime("%d %b of %Y") %></h2>
+            <h2><i class="far fa-calendar-times icon-dash"></i><%= (booking.end_date).strftime("%d %b of %Y") %></h2>
+            <h2 class = "dashboard-desc"><i class="fas fa-euro-sign icon-dash"></i><%= booking.total_price%></h2>
+          </div>
+      </div>
+    <% end %>
   </div>
+</div>

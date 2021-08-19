@@ -23,12 +23,6 @@ export default class extends Controller {
       console.log(this.totalTarget.innerHTML)
       this.totalTarget.innerHTML = finalPrice;
       this.daysTarget.innerHTML = diffDate;
-      console.log(daysTarget)
     } )
-      // Si une des 2 valeurs est vide,
-          //  alors rien
-      // Sinon,
-          // Calculer le nombre de jours entre les deux dates
-          // mettre à jour le DOM span nb jours * le prix
   }
 }
