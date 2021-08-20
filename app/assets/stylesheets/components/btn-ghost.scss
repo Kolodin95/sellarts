@@ -43,7 +43,8 @@
   color: white;
 }
 
-.btn-book{
+
+.btn-search{
   background: #0a5243;
   color: white ;
   border: 1px solid white;
@@ -52,10 +53,14 @@
   font-weight: bold;
   opacity: 1;
   transition: opacity 0.3s ease;
-  margin-top: 16px;
-} 
-
-.btn-book:hover{
-  opacity: 0.8;
 }
-// hexedcimal #06604E 
+
+.btn-search:hover{
+  opacity: 0.8;
+  background: white;
+  color: #0a5243;
+  border: 3px solid #0a5243;
+
+
+}
+// hexedcimal #06604E
