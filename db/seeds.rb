@@ -32,6 +32,12 @@ artwork = Artwork.create(title: 'Arearea (Joyeusetés)', author: "Paul Gauguin",
                          price: rand(100..10_000), user_id: user1.id, denomination: "Tableau")
 artwork.photo.attach(io: file, filename: 'gauguin-arearea.png', content_type: 'image/png')
 artwork.save!
+# 4 artwork
+file = URI.open('https://api.art.rmngp.fr/v1/images/17/205698?t=Jd6qv0xOxdsxYARFHKczWw')
+artwork = Artwork.create(title: 'Nuit étoilée sur le Rhône', author: "Vincent Van Gogh", creation_date: "1888",
+                         price: rand(100..10_000), user_id: user1.id, denomination: "Tableau")
+artwork.photo.attach(io: file, filename: 'vangogh-etoilee.png', content_type: 'image/png')
+artwork.save!
 
 
 
@@ -54,6 +60,12 @@ artwork = Artwork.create(title: 'Installation du Conseil d\'Etat', author: "Loui
                          price: rand(100..10_000), user_id: user2.id, denomination: "Tableau")
 artwork.photo.attach(io: file, filename: 'louis-charles-etat.png', content_type: 'image/png')
 artwork.save!
+# 4 artwork
+file = URI.open('https://api.art.rmngp.fr/v1/images/17/193049?t=8cI-VgAeUNipTX30OY6mxA')
+artwork = Artwork.create(title: 'Autoportrait au Christ jaune', author: "Paul Gauguin", creation_date: "1888",
+                         price: rand(100..10_000), user_id: user1.id, denomination: "Tableau")
+artwork.photo.attach(io: file, filename: 'Gauguin-christ.png', content_type: 'image/png')
+artwork.save!
 
 puts ("Associating 3 artworks to the user 3")
 # 1 artwork
@@ -73,4 +85,10 @@ file = URI.open('https://api.art.rmngp.fr/v1/images/17/208813?t=Mz5TPhqU6qu-CnYO
 artwork = Artwork.create(title: 'Paysannes bretonnes', author: "Paul Gauguin", creation_date: "1894",
                          price: rand(100..10_000), user_id: user3.id, denomination: "Tableau")
 artwork.photo.attach(io: file, filename: 'gauguin-paysannes.png', content_type: 'image/png')
+artwork.save!
+# 4 artwork
+file = URI.open('https://api.art.rmngp.fr/v1/images/17/164405?t=B21LcvI1uusgloW5VdpOEw')
+artwork = Artwork.create(title: 'Londres, le Parlement, trouée de soleil dans le brouillard', author: "Claude Monet", creation_date: "1904",
+                         price: rand(100..10_000), user_id: user1.id, denomination: "Tableau")
+artwork.photo.attach(io: file, filename: 'monet-soleil.png', content_type: 'image/png')
 artwork.save!
