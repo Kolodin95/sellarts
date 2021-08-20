@@ -1,15 +1,30 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1423742774270-6884aac775fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80);">
-  <div class="container" style="display: flex;
-    flex-direction: column;
-    align-items: center;">
-    <h1>Our Artworks to rent now </h1>
-    <% if current_user %>
-  <a class="btn btn-ghost" href="/artworks/new">Add your art !</a>
-    <% end %>
-  </div>
+<div class="container1">
+  <div class="banner">
+    <video width="1440" height="980" loop muted autoplay poster="../../../assets/images/joconde_banner.jpg" class="video">
+        <source src="../assets/video.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <div class="overlay-title">
+        <h1>Rent easily the you always dreamed of
+          <span class="typed" id="banner-typed-text"></span><span class="typed-cursor"></span>
+        </h1>
+      </div>
+    </div>
 </div>
 
-<%# <%= current_user.name %>
+<div class="overlay-clic">
+    <%= form_tag artworks_path, method: :get, class:"form-inline simple_form search-form" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-input",
+        placeholder: "What art do you want to rent ?"
+      %>
+      <%= submit_tag "Search", class: "btn btn-book search-submit" %>
+  <% end %>
+</div>
+
+
+
 
 <div class="container">
       <div class="card">
@@ -26,4 +41,5 @@
           </div>
         <% end %>
       </div>
+    </div>
 </div>
