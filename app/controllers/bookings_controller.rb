@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
+    @booking.update(params_bookings)
     redirect_to dashboard_path
   end
 
@@ -45,6 +45,6 @@ class BookingsController < ApplicationController
   private
 
   def params_bookings
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :validated)
   end
 end
