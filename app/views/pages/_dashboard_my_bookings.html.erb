@@ -1,6 +1,7 @@
 <div class="container">
   <h1>My bookings</h1>
   <div class="card">
+
     <% @bookings.each do |booking| %>
       <div class="card-img">
       <%= link_to artwork_path(booking.artwork) do %>
@@ -15,5 +16,6 @@
           </div>
       </div>
     <% end %>
+
   </div>
 </div>

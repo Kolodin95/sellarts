@@ -28,6 +28,13 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def booked
+    @booking_pending = Booking.find(params[:id])
+    authorize @booking_pending
+    @booking_pending.update(validated: true)
+    redirect_to dashboard_path
+  end
+
   private
 
   def params_bookings
