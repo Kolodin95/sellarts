@@ -17,6 +17,7 @@
 
 
          <%= link_to "Validate", confirmation_booking_path(booking)%>
+         <%= link_to "Denied", booking_path(booking), method: :delete %>
       </div>
     <% end %>
   </div>

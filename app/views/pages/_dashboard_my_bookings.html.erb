@@ -3,6 +3,7 @@
   <div class="card">
 
     <% @bookings.each do |booking| %>
+    <% if booking.validated == true %>
       <div class="card-img">
       <%= link_to artwork_path(booking.artwork) do %>
         <%= cl_image_tag booking.artwork.photo.key %>
@@ -16,6 +17,6 @@
           </div>
       </div>
     <% end %>
-
+   <% end %>
   </div>
 </div>

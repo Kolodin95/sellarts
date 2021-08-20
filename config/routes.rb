@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     resources :artworks, only: %i[index show new create] do
       resources :bookings, only: %i[new create ]
     end
+    resources :bookings, only: %i[destroy]
     resources :pages, only: %i[booked]
     # resources :pages, only: %i[dashboard]
      get 'dashboard', to: 'pages#dashboard'
      get "bookings/:id/booked", to: "bookings#booked", as: "confirmation_booking"
-
 end

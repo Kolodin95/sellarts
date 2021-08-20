@@ -16,4 +16,8 @@ class BookingPolicy < ApplicationPolicy
   def booked?
     return true
   end
+
+  def destroy?
+    return true
+  end
 end
