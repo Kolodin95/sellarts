@@ -8,24 +8,28 @@
     <div>
        <table width="100%" cellspacing="1" cellpadding="5">
           <tr>
-            <td class = "card-desc-placeholder">Artist : </td>
+            <td class = "card-desc-placeholder"><i class="fas fa-palette icon-dash"></i>Artist : </td>
             <td class = "card-desc-real-data"><%= @artwork.author %></td>
           </tr>
           <tr>
-            <td class = "card-desc-placeholder">Artwork title : </td>
+            <td class = "card-desc-placeholder"><i class="fas fa-heading icon-dash"></i>Artwork title : </td>
             <td class = "card-desc-real-data"><%= @artwork.title %></td>
           </tr>
           <tr>
-            <td class = "card-desc-placeholder">Type : </td>
+            <td class = "card-desc-placeholder"><i class="fas fa-question icon-dash"></i>Type : </td>
             <td class = "card-desc-real-data"><%= @artwork.denomination %></td>
           </tr>
           <tr>
-            <td class = "card-desc-placeholder">Creation Date : </td>
+            <td class = "card-desc-placeholder"><i class="fas fa-paint-brush icon-dash"></i>Creation Date : </td>
             <td class = "card-desc-real-data"><%= @artwork.creation_date %></td>
           </tr>
-          <tr>
-            <td class = "card-desc-placeholder">Available in : </td>
-            <td class = "card-desc-real-data"><%= @artwork.address %></td>
+          <%# <tr>
+            <%# <td class = "card-desc-placeholder">Available in : </td> %>
+            <%# <td class = "card-desc-real-data"><%= @artwork.address</td> %>
+          <%# </tr> %>
+           <tr>
+            <td class = "card-desc-placeholder"><i class="fas fa-euro-sign icon-dash"></i>Price per day </td>
+            <td class = "card-desc-real-data"><%= @artwork.price %>€</td>
           </tr>
         </table>
     </div>
@@ -34,7 +38,7 @@
 
 <div class="card-form">
   <div data-controller="price-update-show">
-        <h2 class="card-trip-pricing" >From : <span data-price-update-show-target="price"><%= @artwork.price %></span>€ /day</h2>
+        <h2 class="card-trip-pricing" >Your Booking</h2>
         <%= simple_form_for [ @artwork, @booking ] do |f| %>
           <%= f.input :start_date, html5: true, input_html: {data: {price_update_show_target: "start"}, value: Date.today(), class:"datepicker"} %>
           <%= f.input :end_date, html5: true, input_html: {data: {price_update_show_target: "end"}, value: Date.today() + 1, class:"datepicker"} %>
