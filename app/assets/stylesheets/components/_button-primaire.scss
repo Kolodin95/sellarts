@@ -1,0 +1,15 @@
+.btn-book{
+  background: #DE8609;
+  color: white ;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  margin-top: 16px;
+} 
+
+.btn-book:hover{
+  opacity: 0.8;
+}

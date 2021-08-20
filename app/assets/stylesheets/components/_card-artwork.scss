@@ -1,8 +1,10 @@
 .card-artwork{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 49px;
   background: white;
-  width: 40%;
+  width: 30%;
+  padding: 16px;
+  border: solid 6px #0a5243;
   }
   
   .card-artwork-infos {
@@ -12,10 +14,9 @@
   
   
   .card-artwork > img {
-    object-fit: cover;
+
     height: 350px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 15px;
     width: 100%;
   }
   
@@ -44,10 +45,11 @@
   
   .card-form {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  padding: 20px;
+  border-radius: 49px;
+  padding: 80px;
   background: white;
-  width: 40%;
+  width: 30%;
+  border: solid 6px #0a5243;
    }
   
    .new_booking {
