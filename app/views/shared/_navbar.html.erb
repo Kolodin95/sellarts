@@ -19,6 +19,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+        <div class="welcome"><%= "Welcome #{current_user.name}" %></div>
       <li class="nav-item dropdown">
       <%= image_tag "profile_picture.jpg", id:"navbarDropdown", class:"avatar", data: {toggle:"dropdown"}, aria:{haspopup:"true"}, aria:{expanded:"false"} %>
         <%# <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="../../images/profile_picture"/> %>
