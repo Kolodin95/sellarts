@@ -19,14 +19,14 @@
         class: "form-control search-input",
         placeholder: "What art do you want to rent ?"
       %>
-      <%= submit_tag "Search", class: "btn btn-book search-submit" %>
+      <%= submit_tag "Search", class: "btn btn-search search-submit" %>
   <% end %>
 </div>
 
 
 
 
-<div class="container">
+<div class="container container-cards" >
       <div class="card">
         <% @artworks.each do |artwork| %>
           <div class="card-img">

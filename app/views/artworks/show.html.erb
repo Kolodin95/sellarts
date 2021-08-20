@@ -1,7 +1,7 @@
 
 <h1> Rent <%= @artwork.title %> by <%= @artwork.author %></h1>
 
-<div class="container-show">
+<div class="container-show" data-controller="price-update-show">
 <div class="card-artwork">
   <%= cl_image_tag @artwork.photo.key, height: 400, width: 400, crop: :fill  %>
   <div class="card-artwork-infos">
@@ -29,7 +29,7 @@
           <%# </tr> %>
            <tr>
             <td class = "card-desc-placeholder"><i class="fas fa-euro-sign icon-dash"></i>Price per day </td>
-            <td class = "card-desc-real-data"><%= @artwork.price %>€</td>
+            <td class = "card-desc-real-data"><span data-price-update-show-target="price"><%= @artwork.price %></span>€</td>
           </tr>
         </table>
     </div>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="card-form">
-  <div data-controller="price-update-show">
+  <div>
         <h2 class="card-trip-pricing" >Your Booking</h2>
         <%= simple_form_for [ @artwork, @booking ] do |f| %>
           <%= f.input :start_date, html5: true, input_html: {data: {price_update_show_target: "start"}, value: Date.today(), class:"datepicker"} %>
