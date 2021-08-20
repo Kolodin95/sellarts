@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>My pending bookings</h1>
+  <div class="card">
+    <% @bookings_pending.each do |booking| %>
+      <div class="card-img">
+      <%= link_to artwork_path(booking.artwork) do %>
+        <%= cl_image_tag booking.artwork.photo.key %>
+        <% end %>
+          <div class="card-infos">
+            <h2><i class="fas fa-heading icon-dash"></i><%= booking.artwork.title %></h2>
+            <h2><i class="fas fa-palette icon-dash"></i><%= booking.artwork.author %></h2>
+            <h2><i class="far fa-calendar-check icon-dash"></i><%= (booking.start_date).strftime("%d %b of %Y") %></h2>
+            <h2><i class="far fa-calendar-times icon-dash"></i><%= (booking.end_date).strftime("%d %b of %Y") %></h2>
+            <h2 class = "dashboard-desc"><i class="fas fa-euro-sign icon-dash"></i><%= booking.total_price%></h2>
+          </div>
+
+
+
+         <%= link_to "Validate", confirmation_booking_path(booking)%>
+         <%= link_to "Denied", booking_path(booking), method: :delete %>
+      </div>
+    <% end %>
+  </div>
+</div>
