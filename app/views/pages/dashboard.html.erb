@@ -1,25 +1,3 @@
-# a mettre dans le _dashboard_my_bookings
-<!-- <div class="container">
-  <h1>My bookings</h1>
-  <div class="card">
-    <% @bookings.each do |booking| %>
-      <div class="card-img">
-      <%= link_to artwork_path(booking.artwork) do %>
-        <%= cl_image_tag booking.artwork.photo.key %>
-        <% end %>
-          <div class="card-infos">
-            <h2><i class="fas fa-heading icon-dash"></i><%= booking.artwork.title %></h2>
-            <h2><i class="fas fa-palette icon-dash"></i><%= booking.artwork.author %></h2>
-            <h2><i class="far fa-calendar-check icon-dash"></i><%= (booking.start_date).strftime("%w %b of %Y") %></h2>
-            <h2><i class="far fa-calendar-times icon-dash"></i><%= (booking.end_date).strftime("%w %b of %Y") %></h2>
-            <h2 class = "dashboard-desc"><i class="fas fa-euro-sign icon-dash"></i><%= booking.total_price%></h2>
-          </div>
-      </div>
-    <% end %>
-  </div>
-</div>
- -->
-
 <div class="menu-navbar" id="menu-navbar">
   <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">My bookings</a>
@@ -28,7 +6,7 @@
   </div>
   <div class="tab-content" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"> <%= render "dashboard_my_bookings" %></div>
-    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"> <%= render "dashboard_my_pending_bookings" %></div>
     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"><%= render "dashboard_my_arts" %></div>
   </div>
 </div>
